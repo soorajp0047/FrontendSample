@@ -1,0 +1,53 @@
+ /* Apply a clean, modern font and background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Style headings */
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* Biography section */
+pre {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-left: 5px solid #3498db;
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Skills list */
+p:has(br) {
+    background-color: #fefefe;
+    padding: 10px;
+    border-left: 4px solid #2ecc71;
+    font-weight: bold;
+}
+
+/* Add subtle animation */
+body {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
