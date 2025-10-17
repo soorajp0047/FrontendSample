@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grade Calculator (Switch Version)</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      input,
+      button {
+        padding: 8px;
+        margin: 5px 0;
+      }
+      #result {
+        margin-top: 15px;
+        font-weight: bold;
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Grade Calculator (Using Switch)</h2>
+    <label for="marks">Enter marks (0–100): </label>
+    <input type="number" id="marks" placeholder="Enter marks" />
+    <button onclick="calculateGrade()">Get Grade</button>
+
+    <div id="result"></div>
+
+    <script>
+      function calculateGrade() {
+        let marks = document.getElementById("marks").value;
+        marks = Number(marks);
+
+        // Validation
+        if (isNaN(marks) || marks < 0 || marks > 100) {
+          alert("Please enter a valid number between 0 and 100.");
+          return;
+        }
+
+        let grade;
+        // Get the tens digit (e.g. 85 -> 8, 72 -> 7)
+        let tens = Math.floor(marks / 10);
+
+        switch (tens) {
+          case 10: // for 100
+          case 9:
+            grade = "S";
+            break;
+          case 8:
+            grade = "A+";
+            break;
+          case 7:
+            grade = "A";
+            break;
+          case 6:
+            grade = "B+";
+            break;
+          case 5:
+            grade = "B";
+            break;
+          case 4:
+            grade = "C";
+            break;
+          default:
+            grade = "F";
+        }
+
+        document.getElementById("result").innerText = "Your grade is: " + grade;
+      }
+    </script>
+  </body>
+</html>
