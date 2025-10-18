@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse Name</title>
+    <style>
+      body {
+        font-family: Calibri, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+      }
+      input,
+      button {
+        font-size: 18px;
+        padding: 8px;
+        margin: 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+      }
+      #output {
+        font-size: 30px;
+        margin-top: 30px;
+        display: inline-block;
+        border: 2px solid black;
+        padding: 10px;
+        min-width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Enter Name Here</h2>
+    <input type="text" id="nameInput" placeholder="Enter Name Here" />
+    <br />
+    <button onclick="reverseName()">Reverse</button>
+    <br />
+    <div id="output"></div>
+
+    <script>
+      function reverseName() {
+        let name = document.getElementById("nameInput").value;
+        let reversed = name.split("").reverse().join("");
+        document.getElementById("output").innerText = reversed;
+      }
+    </script>
+  </body>
+</html>
